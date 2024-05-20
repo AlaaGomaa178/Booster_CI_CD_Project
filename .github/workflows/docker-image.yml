@@ -3,10 +3,9 @@ name: Docker Image CI
 on:
   push:
     branches: [ "master" ]
+
 jobs:
-
   build-and-push-image:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -26,5 +25,5 @@ jobs:
         docker buildx build \
           --push \
           --file Dockerfile \
-          --tag ${{ secrets.DOCKERHUB_USERNAME }}/jenkins-lab3-github-actions-task:latest 
+          --tag ${{ secrets.DOCKERHUB_USERNAME }}/jenkins-lab3-github-actions-task:latest \
           .
